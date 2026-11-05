@@ -3,7 +3,6 @@ title: About this site
 description: What this site covers, how it's organized, what the page metadata means, and how the writing is licensed.
 created: 2026-10-19
 modified: 2026-11-05
-status: draft
 ---
 
 I'm Ryan Lingo, an applied AI research engineer and developer advocate at [99P Labs](https://www.99plabs.com/), and I use the site for my writing, my research papers, and my talks. It's modeled on [gwern.net](https://gwern.net/about), so the pages are long pieces that I keep revising, and not posts that I write once and leave. For more about me, see [[me|Me]].

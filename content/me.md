@@ -3,7 +3,6 @@ title: Ryan Lingo
 description: My background, from philosophy and professional poker to software, data, and applied AI research, and how to contact me.
 created: 2026-10-19
 modified: 2026-11-05
-status: draft
 ---
 
 ## Background
