@@ -6,7 +6,7 @@ modified: 2026-11-05
 status: draft
 ---
 
-This is the personal website of Ryan Lingo. I'm an applied AI research engineer and developer advocate at [99P Labs](https://www.99plabs.com/), and the site holds my writing, my research papers, and my talks. It's modeled on [gwern.net](https://gwern.net/about), so the pages are long pieces that I keep revising, and not posts that I write once and leave. For more about me, see [[me|Me]].
+I'm Ryan Lingo, an applied AI research engineer and developer advocate at [99P Labs](https://www.99plabs.com/), and I use the site for my writing, my research papers, and my talks. It's modeled on [gwern.net](https://gwern.net/about), so the pages are long pieces that I keep revising, and not posts that I write once and leave. For more about me, see [[me|Me]].
 
 ## What I write about
 

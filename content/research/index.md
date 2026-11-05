@@ -1,6 +1,6 @@
 ---
 title: Research
-description: Ryan Lingo's research on forward deployed engineering, synthetic data, context engineering, and evaluation in applied AI.
+description: My research on forward deployed engineering, synthetic data, context engineering, and evaluation in applied AI.
 created: 2026-11-05
 modified: 2026-11-05
 enableToc: false

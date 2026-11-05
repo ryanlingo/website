@@ -68,6 +68,8 @@ The owner doesn't want hashtags on the site, so tags are never displayed. PageMe
 - `thinking`, `thinking/mental-models`, `thinking/problem-solving`
 - `philosophy`
 
+Write all page copy in first person, including the `description`, which PageMeta shows under the title. Third person belongs only in machine-facing text, i.e. `siteProfile.ts`, the JSON-LD, and `llms.txt`.
+
 Each page should have frontmatter that copies the gwern.net page metadata, as in `content/templates/page.md`. PageMeta shows these fields under the title. The CreatedModifiedDate plugin reads `created` and `modified` from frontmatter first, so `modified` reflects real revisions and not commits that only fix typos. Pages with `draft: true` aren't published.
 
 ```yaml

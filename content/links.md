@@ -1,6 +1,6 @@
 ---
 title: Links
-description: Where to find Ryan Lingo on other sites.
+description: Where to find me on other sites.
 created: 2026-10-19
 modified: 2026-11-05
 enableToc: false

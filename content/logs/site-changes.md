@@ -23,6 +23,7 @@ A plain record of what changed on the site and when, newest first. Changes to th
   - Added LinkedIn, X, Google Scholar, and 99P Labs to the [[links|Links]] page.
   - Rewrote the [[about|Site]] page to match what's on the site.
   - Rewrote the homepage introduction, and added a Research list that links to my four research areas.
+  - Rewrote the summaries under the page titles on the homepage and the Me, Research, Speaking, and Links pages in first person, to match the rest of the site.
 - **Site design**
   - Changed the header links to Site, Me, Research, Blog, Speaking, and Links. The [[new|New]] page is still linked from the homepage and the Site page.
   - Links to other sites now open in a new tab.

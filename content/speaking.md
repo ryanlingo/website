@@ -1,6 +1,6 @@
 ---
 title: Speaking
-description: Talks by Ryan Lingo on AI, learning, and making decisions under uncertainty, and how to invite him to speak.
+description: The topics I speak on, the places I've given talks, and how to invite me to speak.
 created: 2026-11-05
 modified: 2026-11-05
 enableToc: false
