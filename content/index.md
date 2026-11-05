@@ -1,6 +1,6 @@
 ---
 title: Ryan Lingo
-description: My writing, research, and talks on AI, learning, and how to solve open-ended problems.
+description: I played poker for a living. Now I research applied AI and write about making better decisions when you don't have all the information.
 created: 2026-10-19
 modified: 2026-11-05
 enableToc: false

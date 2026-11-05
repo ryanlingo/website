@@ -40,7 +40,7 @@ function sectionFor(slug: string): { label: string; color: string } {
   for (const [prefix, label, color] of sections) {
     if (slug === prefix || slug.startsWith(prefix)) return { label, color }
   }
-  return { label: "Writing, research, and talks", color: ink }
+  return { label: "Philosophy, research, and writing", color: ink }
 }
 
 function blogDate(fileData: any): string | null {
@@ -121,9 +121,9 @@ export function ogImage({ title, description, fileData }: any): El {
           h("div", { display: "flex", flex: 1 }),
           h(
             "div",
-            { display: "flex", justifyContent: "space-between", fontSize: 28, color: ink },
+            { display: "flex", justifyContent: "space-between", alignItems: "baseline", fontSize: 30, color: ink },
             [
-              h("div", { display: "flex", fontWeight: 700 }, "ryanlingo.com"),
+              h("div", { display: "flex", fontWeight: 700, fontSize: 52 }, "ryanlingo.com"),
               h("div", { display: "flex", color: gray }, date ?? ""),
             ],
           ),
