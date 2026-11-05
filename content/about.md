@@ -45,3 +45,5 @@ If you find a mistake, disagree with something, or would just like to talk more 
 ## License
 
 The writing on this site is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). You can copy, change, and share it for any purpose, as long as you credit Ryan Lingo and link back to the original page.
+
+The site is built with [Quartz](https://quartz.jzhao.xyz/), and its source is on [GitHub](https://github.com/ryanlingo/website).
