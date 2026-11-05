@@ -33,6 +33,7 @@ A plain record of what changed on the site and when, newest first. Changes to th
 - **Search and link previews**
   - Page titles in search results and browser tabs now end with my name.
   - Each page now tells search engines and AI tools who wrote it, and blog posts list their publication dates.
+  - Redesigned the link preview images. Each one shows a large RL logo on a color for its section, e.g. red for blog posts and blue for research, next to the page title and description.
   - Link preview images no longer show tags, and they're PNG files so more apps show them.
   - Added a robots.txt file that points search engines to the sitemap, and an [llms.txt](https://ryanlingo.com/llms.txt) file that guides AI tools to the main pages and posts.
 

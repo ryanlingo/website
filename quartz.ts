@@ -6,6 +6,8 @@ import PageMeta from "./quartz/components/PageMeta"
 import DatedIndex from "./quartz/components/DatedIndex"
 import { BlogFeed } from "./quartz/plugins/emitters/blogFeed"
 import { SiteFiles } from "./quartz/plugins/emitters/siteFiles"
+import { CustomOgImages } from "@quartz-community/og-image"
+import { ogImage } from "./quartz/components/OgImage"
 import sharp from "sharp"
 import fs from "node:fs/promises"
 
@@ -52,6 +54,7 @@ config.plugins.emitters.push(SiteFiles())
 // 2. Save them as PNG instead of WebP, because some apps, e.g. LinkedIn, don't show
 //    WebP previews reliably.
 // 3. Drop its <meta> tags, because Head.tsx writes the preview tags for the PNG.
+// It also draws the images with the site's own layout in quartz/components/OgImage.ts.
 type Emitter = (typeof config.plugins.emitters)[number]
 const withoutTags = <T extends { data: { frontmatter?: Record<string, unknown> } }>(file: T): T =>
   ({ ...file, data: { ...file.data, frontmatter: { ...file.data.frontmatter, tags: [] } } }) as T
@@ -65,6 +68,7 @@ async function* asPng(paths: AsyncIterable<string>) {
 }
 config.plugins.emitters = config.plugins.emitters.map((emitter): Emitter => {
   if (emitter.name !== "CustomOgImages") return emitter
+  emitter = CustomOgImages({ imageStructure: ogImage as any }) as Emitter
   return {
     ...emitter,
     externalResources: undefined,
