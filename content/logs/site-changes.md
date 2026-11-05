@@ -27,6 +27,7 @@ A plain record of what changed on the site and when, newest first. Changes to th
 - **Site design**
   - Changed the header links to Site, Me, Research, Blog, Speaking, and Links. The [[new|New]] page is still linked from the homepage and the Site page.
   - Links to other sites now open in a new tab.
+  - The anonymous feedback links in the footer, on the homepage, and on the Site page now go straight to the Google Form.
   - Body text is now left aligned, because justified text left wide gaps between words.
   - The email address on the Speaking page is hidden from web crawlers.
 - **Search and link previews**

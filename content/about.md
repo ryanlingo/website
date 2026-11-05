@@ -40,7 +40,7 @@ Each page has the following metadata under its title:
 
 ## Feedback
 
-If you find a mistake, disagree with something, or would just like to talk more about an idea, I'd like to hear from you. You can [[me#Contact|email me]], or send [[me#Anonymous feedback|anonymous feedback]].
+If you find a mistake, disagree with something, or would just like to talk more about an idea, I'd like to hear from you. You can [[me#Contact|email me]], or send [anonymous feedback](https://forms.gle/pyYwuRPNt15ssXCa6).
 
 ## License
 

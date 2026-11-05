@@ -8,7 +8,7 @@ enableToc: false
 
 I'm **Ryan Lingo**, an applied AI research engineer and developer advocate at [99P Labs](https://www.99plabs.com/), the Ohio office of Honda Research Institute. I write about AI, about how people and teams learn, and about how to solve open-ended problems, and my background in philosophy shapes how I approach all three. I revise pages over time rather than posting once and moving on, so each page lists when I started it, when I last changed it, how finished it is, and how confident I am in it.
 
-<span class="index-label">Navigation</span>: for how the site is organized and what the page metadata means, see the [[about|Site page]]. For my background, see the [[me|Me page]]. For recent changes, see [[new|What's new]] and the [[site-changes|site changelog]]. If you find a mistake, disagree with something, or want to talk more about an idea, [[me#Contact|email me]] or send [[me#Anonymous feedback|anonymous feedback]].
+<span class="index-label">Navigation</span>: for how the site is organized and what the page metadata means, see the [[about|Site page]]. For my background, see the [[me|Me page]]. For recent changes, see [[new|What's new]] and the [[site-changes|site changelog]]. If you find a mistake, disagree with something, or want to talk more about an idea, [[me#Contact|email me]] or send [anonymous feedback](https://forms.gle/pyYwuRPNt15ssXCa6).
 
 <span class="index-label">Sections</span>: the [[blog/index|blog]] holds my writing, which I keep revising, [[research/index|research]] describes my research areas and papers, [[speaking|speaking]] lists the topics I speak on and where I've given talks, and [[logs/index|logs]] are plain records, e.g. the site changelog.
 

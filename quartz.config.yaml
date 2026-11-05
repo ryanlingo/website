@@ -229,7 +229,7 @@ plugins:
     options:
       links:
         Contact: /me#contact
-        Anonymous feedback: /me#anonymous-feedback
+        Anonymous feedback: https://forms.gle/pyYwuRPNt15ssXCa6
         GitHub: https://github.com/ryanlingo
         RSS: /index.xml
         License (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/

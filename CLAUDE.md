@@ -56,7 +56,7 @@ Folders describe what kind of page something is, and tags describe the topic. A 
 
 The homepage (`content/index.md`) copies gwern.net/index. It has intro paragraphs, then `## ` sections (Newest, Popular, and one per topic) holding wikilink lists, which `custom.scss` lays out in two columns on the homepage only. The lists are edited by hand, so add new pages to them. Wikilink aliases don't render Markdown, so don't put `*italics*` inside them.
 
-Readers contact the owner through the Contact and Anonymous feedback sections of `me.md`, which the footer links to. Email goes to ryanlingo@gmail.com, which pages show with the `email-link` markup from `SiteNav.tsx` so crawlers can't read the address, and anonymous feedback goes through a Google Form with email collection turned off, because GitHub Pages can't receive form submissions.
+Readers contact the owner through the Contact section of `me.md` and through the anonymous Google Form (https://forms.gle/pyYwuRPNt15ssXCa6). Every "anonymous feedback" link, including the footer link, points straight to the form. Email goes to ryanlingo@gmail.com, which pages show with the `email-link` markup from `SiteNav.tsx` so crawlers can't read the address, and anonymous feedback goes through a Google Form with email collection turned off, because GitHub Pages can't receive form submissions.
 
 Excalidraw drawings (`.excalidraw.md` or `.excalidraw` files) are published as their own full-page interactive drawings, and `![[name.excalidraw]]` embeds one in a page.
 
