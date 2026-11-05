@@ -1,3 +1,751 @@
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
+// Styles modeled on gwern.net: one centered serif column, black and white,
+// small caps titles, a compact metadata block, and a floating table of contents.
+
+// Fonts are served from quartz/static/fonts (Latin subsets from Google Fonts, SIL OFL).
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url("/static/fonts/source-serif-4-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: italic;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url("/static/fonts/source-serif-4-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Sans 3";
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url("/static/fonts/source-sans-3-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Sans 3";
+  font-style: italic;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url("/static/fonts/source-sans-3-italic.woff2") format("woff2");
+}
+
+$gwBodyWidth: 935px;
+$gwSans: "Source Sans 3", "Lucida Sans Unicode", "Helvetica", sans-serif;
+
+html {
+  font-size: 20px;
+  @media all and ($mobile) {
+    font-size: 18px;
+  }
+}
+
+body {
+  line-height: 1.55;
+  // Use the text optical size of Source Serif 4, as gwern.net does. The browser's
+  // automatic optical size picks the high contrast display design at 20px.
+  font-optical-sizing: none;
+  font-variation-settings: "opsz" 12;
+}
+
+#quartz-root.page {
+  max-width: $gwBodyWidth;
+  padding: 0 2rem;
+  @media all and ($mobile) {
+    padding: 0 1rem;
+  }
+
+  & > #quartz-body {
+    padding: 0;
+  }
+}
+
+// Header: site name, a row of boxed section links, then search and dark mode.
+.page-header {
+  margin-top: 1rem !important;
+
+  & > header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0;
+  }
+
+  & .page-title {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-variant-caps: small-caps;
+    letter-spacing: 0.02em;
+    flex: 0 0 auto;
+
+    & a {
+      color: var(--dark);
+    }
+  }
+
+  & .search {
+    flex-grow: 0;
+    min-width: 0;
+    margin-left: auto;
+
+    & > .search-button {
+      background: none;
+      border: none;
+      width: auto;
+      padding: 0;
+
+      & > p {
+        display: none;
+      }
+    }
+  }
+}
+
+// RL logo. On wide screens it hangs in the left margin beside the nav bar, as the
+// gwern.net logo does. It's the same size on every page.
+.site-logo {
+  display: block;
+  flex: 0 0 auto;
+  width: 4.5rem;
+  color: var(--dark);
+  line-height: 0;
+
+  & svg {
+    width: 100%;
+    height: auto;
+  }
+
+  &:hover {
+    color: var(--gray);
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .page-header > header {
+    position: relative;
+  }
+
+  .site-logo {
+    position: absolute;
+    top: -0.25rem;
+    right: calc(100% + 1.25rem);
+    width: 6.5rem;
+  }
+}
+
+// The homepage has no title, as on gwern.net, because the logo already names the site.
+body[data-slug="index"] h1.article-title {
+  display: none;
+}
+body[data-slug="index"] .page-header {
+  margin-bottom: 1.5rem;
+}
+
+.site-nav {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  border: 1px dotted var(--gray);
+
+  & a {
+    flex: 1 1 auto;
+    text-align: center;
+    padding: 0.15rem 0.5rem;
+    color: var(--darkgray);
+    background: none;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    border-left: 1px dotted var(--gray);
+
+    &:first-child {
+      border-left: none;
+    }
+
+    &:hover {
+      color: var(--dark);
+      background: var(--highlight);
+    }
+  }
+
+  @media all and ($mobile) {
+    order: 3;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+
+    & a {
+      font-size: 0.75rem;
+    }
+  }
+}
+
+.breadcrumb-container {
+  justify-content: center;
+  margin: 1.25rem 0 0 0;
+  font-family: $gwSans;
+  font-size: 0.75rem;
+
+  & a {
+    font-weight: normal;
+  }
+}
+
+// Page title: centered small caps.
+h1.article-title {
+  margin: 1rem 0 0.75rem 0;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  font-variant-caps: small-caps;
+  letter-spacing: -1px;
+  line-height: 1.15;
+  text-wrap: balance;
+  @media all and ($mobile) {
+    font-size: 2rem;
+  }
+}
+
+// Metadata block from quartz/components/PageMeta.tsx.
+.page-meta {
+  max-width: 45rem;
+  margin: 0 auto 1.75rem auto;
+  text-align: center;
+  line-height: 1.5;
+
+  & .page-meta-description {
+    font-style: italic;
+    font-size: 0.95rem;
+    text-wrap: balance;
+    margin-bottom: 0.5rem;
+  }
+
+  & .page-meta-fields {
+    font-size: 0.85rem;
+
+    & .page-meta-status {
+      font-style: italic;
+    }
+  }
+
+  & .page-meta-sep {
+    color: var(--gray);
+    margin: 0 0.5em;
+  }
+}
+
+// Table of contents: a numbered gray box floated to the left of the text.
+.toc {
+  font-family: $gwSans;
+  font-size: 0.85rem;
+  border: 1px solid var(--lightgray);
+  background: var(--highlight);
+  padding: 0.5rem 1rem 0.5rem 0.75rem;
+  margin: 0.25rem 1.5rem 1rem 0;
+  max-width: 18rem;
+
+  @media all and not ($mobile) {
+    float: left;
+  }
+
+  & .toc-header {
+    display: none;
+  }
+
+  & .toc-content {
+    max-height: none !important;
+    counter-reset: toc0;
+  }
+
+  & ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  // Each entry is a row with the number in a fixed-width, right-aligned column, so the
+  // titles line up from 1 to 12 and a long title wraps under its own text. Subsections
+  // are numbered 2.1, 2.2, and so on, as on gwern.net.
+  & li {
+    display: flex;
+    align-items: baseline;
+    margin: 0.2rem 0;
+    line-height: 1.3;
+
+    &::before {
+      flex: 0 0 auto;
+      width: 1.5em;
+      margin-right: 0.4em;
+      text-align: right;
+      color: var(--gray);
+      font-variant-numeric: tabular-nums;
+    }
+
+    & > a {
+      flex: 1 1 auto;
+      color: var(--dark);
+      opacity: 1;
+    }
+  }
+
+  & li.depth-0 {
+    counter-increment: toc0;
+    counter-reset: toc1;
+
+    &::before {
+      content: counter(toc0);
+    }
+
+    & > a {
+      font-weight: 600;
+    }
+  }
+
+  & li.depth-1 {
+    counter-increment: toc1;
+    counter-reset: toc2;
+    padding-left: 1.9em;
+    font-size: 0.95em;
+
+    &::before {
+      content: counter(toc0) "." counter(toc1);
+      width: 2em;
+    }
+
+    & > a {
+      font-weight: normal;
+    }
+  }
+
+  & li.depth-2 {
+    counter-increment: toc2;
+    padding-left: 4.3em;
+    font-size: 0.9em;
+
+    &::before {
+      content: counter(toc0) "." counter(toc1) "." counter(toc2);
+      width: 2.75em;
+    }
+
+    & > a {
+      font-weight: normal;
+    }
+  }
+}
+
+// Body text. It's left aligned, because justified text stretched the spaces
+// between words on short lines and in lists.
+article {
+  hyphens: auto;
+  text-align: left;
+
+  // Paragraphs are separated by a first line indent, not by space.
+  & p {
+    margin: 0;
+  }
+  & p + p {
+    text-indent: 2.5em;
+  }
+  & :is(ul, ol, blockquote, table, pre, .callout) {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  // Drop cap on the first letter, when a page opens with a paragraph.
+  // No indent after a block that isn't a paragraph, e.g. an embed wrapped in an empty <p>.
+  & p:empty {
+    display: none;
+  }
+  & p:empty + p,
+  & p:has(> img) + p,
+  & :is(ul, ol, blockquote, table, pre, .callout) + p {
+    text-indent: 0;
+  }
+
+  & sup {
+    line-height: 0;
+  }
+
+  // Entries under a "References" or "Bibliography" heading get a hanging indent, sit
+  // flush left, and have a small gap between them, instead of the paragraph indent.
+  & h2:is(#references, #bibliography) ~ p {
+    font-size: 0.9em;
+    text-align: left;
+    hyphens: manual;
+    text-indent: -2em;
+    padding-left: 2em;
+    margin-bottom: 0.5rem;
+  }
+
+  // Images sit on their own line, centered, with space above and below.
+  & p:has(> img) {
+    text-indent: 0;
+    text-align: center;
+    margin: 1.25rem 0;
+
+    & > img {
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+  }
+
+  & .markdown-rendered > p:first-child::first-letter {
+    float: left;
+    font-size: 3.6em;
+    line-height: 0.85;
+    padding: 0.05em 0.08em 0 0;
+  }
+
+  & a,
+  & a.internal {
+    color: var(--dark);
+    font-weight: inherit;
+    background: none;
+    border-radius: 0;
+    padding: 0;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+    text-decoration-color: var(--gray);
+
+    &:hover {
+      color: var(--gray);
+    }
+  }
+
+  // H2 in Markdown is the top section level, styled like gwern.net's H1.
+  & h2 {
+    overflow: hidden;
+    text-align: right;
+    font-size: 1.75rem;
+    font-weight: 600;
+    font-variant-caps: small-caps;
+    letter-spacing: -0.75px;
+    border-bottom: 1px solid var(--dark);
+    margin: 2rem 0 1rem 0;
+  }
+
+  & h3 {
+    overflow: hidden;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    border-bottom: 1px dotted var(--gray);
+    margin: 1.5rem 0 0.75rem 0;
+  }
+
+  & h4 {
+    font-size: 1.1rem;
+  }
+
+  & blockquote {
+    border: 1px solid var(--lightgray);
+    background: var(--highlight);
+    padding: 0.75rem 1.25rem;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 0.95em;
+
+    & p + p {
+      text-indent: 0;
+      margin-top: 0.5rem;
+    }
+  }
+
+  & table {
+    font-family: $gwSans;
+    font-size: 0.85rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    border-top: 2px solid var(--dark);
+    border-bottom: 2px solid var(--dark);
+
+    & th,
+    & td {
+      padding: 0.25rem 0.75rem;
+      text-align: left;
+    }
+
+    & th {
+      border-bottom: 1px solid var(--dark);
+    }
+
+    & tr {
+      border-bottom: none;
+    }
+  }
+
+  & ol,
+  & ul {
+    padding-left: 1.75rem;
+  }
+
+  // Footnote references are small superscript numbers.
+  & sup a[data-footnote-ref] {
+    text-decoration: none;
+    font-size: 0.75em;
+    padding: 0 0.1em;
+  }
+}
+
+// Footnotes at the end of the page, in smaller type.
+.footnotes {
+  font-size: 0.85rem;
+  border-top: none;
+  margin-top: 2.5rem;
+
+  & h2 {
+    overflow: hidden;
+  }
+
+  & ol {
+    padding-left: 1.5rem;
+  }
+
+  & li p {
+    text-indent: 0;
+  }
+}
+
+// Backlinks and footer sit below the text in small sans serif type.
+.backlinks {
+  clear: both;
+  font-family: $gwSans;
+  font-size: 0.85rem;
+  border-top: 1px solid var(--lightgray);
+  margin-top: 2rem;
+  padding-top: 0.5rem;
+
+  & h3 {
+    font-variant-caps: small-caps;
+    font-size: 0.95rem;
+  }
+}
+
+footer {
+  clear: both;
+  text-align: center;
+  font-family: $gwSans;
+  font-size: 0.75rem;
+  color: var(--gray);
+  opacity: 1;
+
+  & ul {
+    justify-content: center;
+  }
+
+  & a {
+    color: var(--darkgray);
+  }
+}
+
+// Embedded Excalidraw drawings: drop the transcluded file name heading and frame the drawing.
+.transclude:has(.excalidraw-page) {
+  border: 1px solid var(--lightgray);
+  padding: 0;
+  margin: 1rem 0;
+
+  background: none;
+
+  & > h1,
+  & > .transclude-src {
+    display: none;
+  }
+
+  // Embedded drawings are static images: no zoom buttons, and the drawing ignores the
+  // mouse, so dragging does nothing and scrolling over it scrolls the page. A drawing's
+  // own full page keeps the plugin's pan and zoom.
+  & .excalidraw-controls {
+    display: none;
+  }
+
+  & .excalidraw-container {
+    pointer-events: none;
+    cursor: default;
+  }
+}
+
+// Homepage, modeled on gwern.net/index: intro paragraphs at full width, then the
+// "## " sections as short link lists in two columns.
+body[data-slug="index"] article {
+  & .markdown-rendered {
+    column-count: 2;
+    column-gap: 3rem;
+    @media all and ($mobile) {
+      column-count: 1;
+    }
+
+    & > p {
+      column-span: all;
+    }
+
+    // The intro paragraphs keep the usual first line indent, but no drop cap.
+    & > p:first-child::first-letter {
+      float: none;
+      font-size: inherit;
+      line-height: inherit;
+      padding: 0;
+    }
+
+    & > p:last-of-type {
+      margin-bottom: 1.5rem;
+    }
+
+    & > h2 {
+      text-align: left;
+      font-size: 1.35rem;
+      letter-spacing: 0;
+      border-bottom: 1px dotted var(--gray);
+      margin: 0 0 0.5rem 0;
+      break-after: avoid;
+      overflow: visible;
+
+      & > a[role="anchor"] {
+        display: none;
+      }
+
+      // Topic headings link to their tag pages, without an underline.
+      & > a.internal {
+        text-decoration: none;
+      }
+    }
+
+    & > ul {
+      margin: 0 0 1.5rem 0;
+      padding-left: 1.5rem;
+      text-align: left;
+      break-inside: avoid;
+
+      & > li::marker {
+        content: "✧  ";
+        color: var(--gray);
+      }
+    }
+  }
+
+  & .index-label {
+    font-variant-caps: small-caps;
+    letter-spacing: 0.03em;
+  }
+}
+
+// Blog and New pages, modeled on gwern.net/blog/index: a one line intro in small caps,
+// then year headings with a list of titles and (MM-DD) dates.
+body[data-slug="blog/index"],
+body[data-slug="new"] {
+  & article .markdown-rendered > p {
+    font-variant-caps: small-caps;
+    text-align: left;
+    letter-spacing: 0.02em;
+
+    &::first-letter {
+      float: none;
+      font-size: inherit;
+      line-height: inherit;
+      padding: 0;
+    }
+  }
+
+  // Quartz's own folder listing is replaced by the dated list, and the rule between
+  // the page text and the list is dropped.
+  & .page-listing,
+  & .center > hr {
+    display: none;
+  }
+}
+
+.dated-index {
+  & h2 {
+    text-align: right;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border-bottom: 1px solid var(--gray);
+    margin: 0.5rem 0 1rem 0;
+  }
+
+  & ul {
+    list-style: none;
+    margin: 0 0 1.5rem 0;
+    padding-left: 2rem;
+  }
+
+  & li {
+    margin: 0.6rem 0;
+
+    &::before {
+      content: "✦";
+      color: var(--darkgray);
+      display: inline-block;
+      width: 1.75rem;
+      margin-left: -1.75rem;
+    }
+  }
+
+  & a.internal {
+    color: var(--dark);
+    font-weight: 600;
+    background: none;
+    padding: 0;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+    text-decoration-color: var(--gray);
+
+    &:hover {
+      color: var(--gray);
+    }
+  }
+}
+
+// No hashtags anywhere: Quartz puts "#" before tag links, and folder and tag listings
+// show each page's tags. Topic pages still exist, linked from the homepage headings.
+a.internal.tag-link::before {
+  content: none;
+}
+.page-listing ul.tags {
+  display: none;
+}
+
+// Folder pages don't show Quartz's "N items under this folder." line.
+.page-listing > p:first-child {
+  display: none;
+}
+
+// Speaking page. The contact line and the list of past venues have no first
+// line indent. The contact line sits two blank lines below the topics list,
+// and the venue list is small gray text.
+article :is(.speaking-contact, .past-talks) {
+  text-indent: 0;
+}
+article .speaking-contact {
+  margin-top: 2lh;
+}
+article .past-talks {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+// Inline SVG diagrams, used on the Research page and in blog posts. They're
+// drawn in currentColor, with notes in var(--gray), so they follow the light
+// and dark themes. Set gray with a style attribute, because SVG presentation
+// attributes can't read CSS variables.
+article .research-diagram {
+  margin: 1.5rem auto;
+  max-width: 700px;
+  color: var(--darkgray);
+  & svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+article .research-diagram-wide {
+  max-width: 100%;
+}
