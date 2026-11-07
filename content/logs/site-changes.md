@@ -2,7 +2,7 @@
 title: Site changelog
 description: A dated record of changes to this site, newest first.
 created: 2026-11-05
-modified: 2026-11-05
+modified: 2026-11-07
 status: in progress
 confidence: certain
 importance: 2
@@ -10,6 +10,10 @@ tags: [technology]
 ---
 
 A plain record of what changed on the site and when, newest first. Changes to the wording of a page are listed only when they change what the page says.
+
+## 2026-11-07
+
+- Added links to my [newsletter](https://ryan-lingo.kit.com/5a55f0a257) on the homepage, the [[links|Links]] page, and in the footer.
 
 ## 2026-11-05
 

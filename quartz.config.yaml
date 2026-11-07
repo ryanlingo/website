@@ -228,6 +228,7 @@ plugins:
     enabled: true
     options:
       links:
+        Newsletter: https://ryan-lingo.kit.com/5a55f0a257
         Contact: /me#contact
         Anonymous feedback: https://forms.gle/pyYwuRPNt15ssXCa6
         GitHub: https://github.com/ryanlingo
