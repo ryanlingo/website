@@ -14,6 +14,7 @@ A plain record of what changed on the site and when, newest first. Changes to th
 ## 2026-11-07
 
 - Added links to my [newsletter](https://ryan-lingo.kit.com/5a55f0a257) on the homepage, the [[links|Links]] page, and in the footer.
+- Renamed the [[me|Me]] page to "About me", so its title is different from the homepage's title in search results.
 
 ## 2026-11-05
 
