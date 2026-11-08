@@ -2,7 +2,7 @@
 title: Site changelog
 description: A dated record of changes to this site, newest first.
 created: 2026-11-05
-modified: 2026-11-07
+modified: 2026-11-08
 status: in progress
 confidence: certain
 importance: 2
@@ -10,6 +10,10 @@ tags: [technology]
 ---
 
 A plain record of what changed on the site and when, newest first. Changes to the wording of a page are listed only when they change what the page says.
+
+## 2026-11-08
+
+- Added a signup box to blog posts that suggests subscribing to my [newsletter](https://ryan-lingo.kit.com/5a55f0a257). It shows up in the middle of the page after you scroll through most of a post, and if you close it, it stays hidden for 30 days.
 
 ## 2026-11-07
 

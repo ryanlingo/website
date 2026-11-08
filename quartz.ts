@@ -4,6 +4,7 @@ import SiteLogo from "./quartz/components/SiteLogo"
 import SiteNav from "./quartz/components/SiteNav"
 import PageMeta from "./quartz/components/PageMeta"
 import DatedIndex from "./quartz/components/DatedIndex"
+import NewsletterPrompt from "./quartz/components/NewsletterPrompt"
 import { BlogFeed } from "./quartz/plugins/emitters/blogFeed"
 import { SiteFiles } from "./quartz/plugins/emitters/siteFiles"
 import { CustomOgImages } from "@quartz-community/og-image"
@@ -20,14 +21,16 @@ const siteLogo = SiteLogo()
 const siteNav = SiteNav()
 const pageMeta = PageMeta()
 const datedIndex = DatedIndex()
+const newsletterPrompt = NewsletterPrompt()
 const customize = <T extends { header?: unknown[]; beforeBody?: unknown[]; afterBody?: unknown[] }>(
   layout: T,
 ): T => {
   const header = [siteLogo, siteNav, ...(layout.header ?? [])]
   const beforeBody = [...(layout.beforeBody ?? [])]
   beforeBody.splice(2, 0, pageMeta)
-  // The dated list on the Blog and New pages goes right after the page text.
-  const afterBody = [datedIndex, ...(layout.afterBody ?? [])]
+  // The dated list on the Blog and New pages goes right after the page text, and the
+  // newsletter card, which only renders on blog posts, goes at the end.
+  const afterBody = [datedIndex, ...(layout.afterBody ?? []), newsletterPrompt]
   return { ...layout, header, beforeBody, afterBody }
 }
 export const layout = {
