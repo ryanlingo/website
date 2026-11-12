@@ -56,8 +56,9 @@ export function ogImage({ title, description, fileData }: any): El {
   const { label, color } = sectionFor(slug)
   const date = slug.startsWith("blog/") && slug !== "blog/index" ? blogDate(fileData) : null
   // Long titles get a smaller font and a shorter description, so they fit above the footer.
+  // A title over 16 characters wraps onto a second line, so its description is shorter too.
   const titleSize = title.length > 40 ? 54 : title.length > 24 ? 66 : 80
-  const descMax = title.length > 40 ? 100 : 170
+  const descMax = title.length > 40 ? 100 : title.length > 16 ? 120 : 170
   const desc =
     description.length > descMax
       ? description.slice(0, descMax).replace(/[\s,;:]+\S*$/, "") + "..."
