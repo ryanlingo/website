@@ -2,7 +2,7 @@
 title: Ryan Lingo
 description: I played poker for a living. Now I research applied AI and write about making better decisions when you don't have all the information.
 created: 2026-10-19
-modified: 2026-11-11
+modified: 2026-11-12
 enableToc: false
 ---
 
@@ -14,6 +14,7 @@ I'm **Ryan Lingo**, an applied AI research engineer and developer advocate at [9
 
 ## [[blog/index|Newest]]
 
+- [[rethinking-ai-evaluation-through-human-ai-interaction|Rethinking AI Evaluation Through Human-AI Interaction]]
 - [[why-many-ai-agents-fail|Why Many AI Agents Fail]]
 - [[you-are-not-using-ai-enough|You Are Not Using AI Enough]]
 - [[why-we-have-the-data|Why 'We Have the Data' Is Never the Same as 'We Know What to Do']]
@@ -25,6 +26,7 @@ I'm **Ryan Lingo**, an applied AI research engineer and developer advocate at [9
 
 ## [[tags/intelligence|Intelligence]]
 
+- [[rethinking-ai-evaluation-through-human-ai-interaction|Rethinking AI Evaluation Through Human-AI Interaction]]
 - [[why-many-ai-agents-fail|Why Many AI Agents Fail]]
 - [[the-curation-problem|The Curation Problem]]
 - [[you-are-not-using-ai-enough|You Are Not Using AI Enough]]
