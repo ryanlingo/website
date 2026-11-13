@@ -2,7 +2,7 @@
 title: "Why Many AI Agents Fail"
 description: "I argue that many AI agents fail because teams treat documents as knowledge, when knowledge gets made by applying information to a goal and checking the result."
 created: 2026-11-11
-modified: 2026-11-11
+modified: 2026-11-12
 status: finished
 confidence: likely
 importance: 8
@@ -50,6 +50,8 @@ Take a walk-in cooler that reads 44 degrees. That reading is data. Once you know
 LLMs blur these levels. A model holds a huge amount of information, and its answers sound like knowledge. But the model doesn’t know your goals, your customers, your constraints, or why your team made the decisions it made. In most systems it’s working at the information level while sounding like it’s a level up.
 
 There’s a test that separates the two. You judge information by whether it’s accurate. You judge knowledge by whether it gets the task done. An agent can retrieve every relevant document, all of them accurate, and still not know what to do. This is why the same recipe card can be knowledge on a normal night and only information when the ticket changes. Knowledge is relative to the task.
+
+Task-relativity also runs through Rajeev Chhajer’s recent post, [Nobody Knows What “Enough Context” Means](https://medium.com/99p-labs/nobody-knows-what-enough-context-means-2e543fba7e77), which helped prompt this one. He builds a similar vocabulary from the systems side, though we use some of the words a little differently. We start from the same place: relevance is a relationship between information and a task, so a document can’t be relevant in the abstract. Rajeev adds a layer this post skips. He calls it context and argues that it gets assembled fresh for each task rather than stored. He also redraws the pyramid as a loop, where every task produces data that feeds the next one, which fits my argument below that knowledge gets made through feedback. We differ most at the top. Rajeev uses wisdom to mean sufficient context, meaning context that is enough to do the task well and no more. I use it for judgment about which goal to serve, like pulling the chicken special. His open question, how much context is enough, is one I can’t answer yet either.
 
 ![Table of the four levels of data, information, knowledge, and wisdom, with the walk-in cooler example and the test for each level, showing that an AI agent's answers sound like knowledge while most systems work at the information level](images/why-many-ai-agents-fail-2.png)
 
