@@ -2,7 +2,7 @@
 title: "Why Many AI Agents Fail"
 description: "I argue that many AI agents fail because teams treat documents as knowledge, when knowledge gets made by applying information to a goal and checking the result."
 created: 2026-11-11
-modified: 2026-11-12
+modified: 2026-11-11
 status: finished
 confidence: likely
 importance: 8

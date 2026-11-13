@@ -14,7 +14,6 @@ A plain record of what changed on the site and when, newest first. Changes to th
 ## 2026-11-12
 
 - Added [[rethinking-ai-evaluation-through-human-ai-interaction|Rethinking AI Evaluation Through Human-AI Interaction]], which first appeared on the 99P Labs blog.
-- Updated [[why-many-ai-agents-fail|Why Many AI Agents Fail]] to match the revised 99P Labs version, which adds a paragraph comparing my use of the data, information, knowledge, and wisdom levels with Rajeev Chhajer's post on how much context an AI system needs.
 
 ## 2026-11-11
 
