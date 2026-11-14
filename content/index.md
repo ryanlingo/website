@@ -54,3 +54,4 @@ I'm **Ryan Lingo**, an applied AI research engineer and developer advocate at [9
 - [[research/index#synthetic-data|Synthetic data]]
 - [[research/index#context-engineering|Context engineering]]
 - [[research/index#evaluation|Evaluation]]
+- [[research/index#continuous-improvement|Continuous improvement]]
