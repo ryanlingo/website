@@ -2,7 +2,7 @@
 title: Site changelog
 description: A dated record of changes to this site, newest first.
 created: 2026-11-05
-modified: 2026-11-12
+modified: 2026-11-14
 status: in progress
 confidence: certain
 importance: 2
@@ -10,6 +10,10 @@ tags: [technology]
 ---
 
 A plain record of what changed on the site and when, newest first. Changes to the wording of a page are listed only when they change what the page says.
+
+## 2026-11-14
+
+- Added a fifth area, continuous improvement, to the [[research/index|Research]] page, with a diagram of how a team makes knowledge by applying information, checking the result, and adjusting.
 
 ## 2026-11-12
 
