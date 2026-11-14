@@ -1,79 +1,16 @@
 ---
 title: Research
-description: My research on continuous improvement, forward deployed engineering, synthetic data, context engineering, and evaluation in applied AI.
+description: My research on forward deployed engineering, synthetic data, context engineering, evaluation, and continuous improvement in applied AI.
 created: 2026-11-05
 modified: 2026-11-14
 enableToc: false
 ---
 
-I do applied AI research at [99P Labs](https://www.99plabs.com/), which is the Ohio office of [Honda Research Institute](https://usa.honda-ri.com/), where I study how to get reliable and useful work out of AI on real problems. Recently, my research has focused on five areas, i.e. continuous improvement, forward deployed engineering, synthetic data, context engineering, and evaluation. Each section below says what I mean by the term, and then lists some of my research that's relevant to it.
+I do applied AI research at [99P Labs](https://www.99plabs.com/), which is the Ohio office of [Honda Research Institute](https://usa.honda-ri.com/), where I study how to get reliable and useful work out of AI on real problems. Recently, my research has focused on five areas, i.e. forward deployed engineering, synthetic data, context engineering, evaluation, and continuous improvement. Each section below says what I mean by the term, and then lists some of my research that's relevant to it.
 
 My philosophy of technology, inspired by John Dewey, guides my research. I see technology as a form of inquiry, i.e. the way people invent and use tools to resolve a problem they've run into. Tools in this sense include machines, and also ideas, methods, and plans. A tool is judged by whether it resolves the situation that called for it, so testing the result and changing course are part of the work. That's why my research starts from a specific problem that people have, treats AI as one tool among others, and checks each result against that problem.
 
-Each of the five areas below plays a part in that approach. Continuous improvement is the loop that runs through the others, because a project gets better only when the team checks each result and records what it learned. Forward deployed engineering is where a project starts, with the problem and the people who have it. Synthetic data and context engineering shape what the AI works with, and evaluation checks whether the result resolves the problem. A full list of my papers is also on [Google Scholar](https://scholar.google.com/citations?user=f3aQo-YAAAAJ&hl=en).
-
-## Continuous improvement
-
-The term comes from the Japanese idea of kaizen, which means change for the better, where a team makes many small changes, checks each result, and keeps what works. I use it to mean how a team and its AI system get better at a task over time. I think most of that improvement comes from making knowledge, and less of it comes from collecting more documents. Documents, workflows, and model outputs hold information, and knowledge gets made when someone applies that information to a goal, checks the result, and adjusts. John Dewey made a similar argument about inquiry almost a century ago.
-
-The diagram below shows the loop as I see it. First, people choose the goal and define the problem, i.e. the decision the system supports, who it's for, and how a good answer will be judged. Second, the team turns data into information for the task and shapes that information into context, and an agent applies the context to produce an outcome. Third, the team checks the outcome with evaluations and expert review. Fourth, the lessons from the check are recorded with their reasons, so they become knowledge that goes into the context for the next task, and the raw outputs go back in as data.
-
-The reasons are the part that teams most often skip. A lesson recorded as a rule only covers the case it came from, but a lesson recorded with its reason can carry over to a new case that nobody planned for. I also think wisdom, i.e. choosing which goal to serve, stays with people for now, so the loop starts and ends with them.
-
-Learning also happens in the people who use AI. The way a person relates to an AI model, e.g. as a vending machine that hands out answers or as a coach that builds a skill, changes what the person learns from it. Most evaluation measures what the AI produced, so I want to study which skills grow and which shrink when someone uses AI in a given way over time.
-
-<figure class="research-diagram research-diagram-wide">
-<svg viewBox="0 0 910 555" role="img" aria-labelledby="learn-title" xmlns="http://www.w3.org/2000/svg">
-<title id="learn-title">Continuous improvement. People choose the goal, which defines the problem, i.e. the decision, the user, and the test. Data becomes information for a task, and the information and the problem are shaped into context for this task, which raises the question of whether the context is sufficient. An agent applies the context and produces a task outcome, which is checked with evaluations and review. The lessons from the check, with their reasons, become knowledge about what worked and why, and that knowledge goes back into the context. The raw outputs return as data. The loop is apply, check, adjust.</title>
-<defs><marker id="learn-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9" fill="none" stroke="currentColor" stroke-width="1.2"/></marker>
-<marker id="learn-arrow-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9" fill="none" style="stroke: var(--gray)" stroke-width="1.2"/></marker></defs>
-<g fill="none" stroke="currentColor" stroke-width="1.2" marker-end="url(#learn-arrow)">
-<line x1="262" y1="34" x2="372" y2="34"/>
-<line x1="420" y1="80" x2="420" y2="178"/>
-<path d="M420 122 H220 V178"/>
-<line x1="84" y1="199" x2="160" y2="199"/>
-<line x1="280" y1="199" x2="374" y2="199"/>
-<line x1="470" y1="199" x2="568" y2="199"/>
-<line x1="652" y1="199" x2="758" y2="199"/>
-<line x1="790" y1="244" x2="790" y2="288"/>
-<path d="M790 354 V414 H346"/>
-<path d="M320 398 V272 H396 V248"/>
-</g>
-<g fill="none" stroke-width="1">
-<line style="stroke: var(--gray)" x1="420" y1="244" x2="420" y2="288" stroke-dasharray="2 3"/>
-<path style="stroke: var(--gray)" d="M826 354 V478 H50 V250" stroke-dasharray="4 4" marker-end="url(#learn-arrow-gray)"/>
-</g>
-<g fill="currentColor" font-size="18" text-anchor="middle">
-<text x="180" y="40">Wisdom</text>
-<text x="420" y="40">Problem</text>
-<text x="50" y="205">Data</text>
-<text x="220" y="205">Information</text>
-<text x="420" y="205">Context</text>
-<text x="610" y="205">Agent</text>
-<text x="790" y="205">Task</text>
-<text x="790" y="320">Check</text>
-<text x="240" y="420">Knowledge</text>
-</g>
-<g font-size="15" text-anchor="middle">
-<text style="fill: var(--gray)" x="180" y="66">people choose the goal</text>
-<text style="fill: var(--gray)" x="420" y="66">decision, user, test</text>
-<text style="fill: var(--gray)" x="50" y="230">artifacts</text>
-<text style="fill: var(--gray)" x="220" y="230">for a task</text>
-<text style="fill: var(--gray)" x="420" y="230">for this task</text>
-<text style="fill: var(--gray)" x="610" y="230">applies it</text>
-<text style="fill: var(--gray)" x="790" y="230">outcome</text>
-<text style="fill: var(--gray)" x="420" y="312" font-style="italic">sufficient context?</text>
-<text style="fill: var(--gray)" x="790" y="345">evals, review</text>
-<text style="fill: var(--gray)" x="240" y="445">what worked and why</text>
-<text style="fill: var(--gray)" x="570" y="402" font-style="italic">lessons, with reasons</text>
-<text style="fill: var(--gray)" x="440" y="502" font-style="italic">raw outputs return as data</text>
-<text style="fill: var(--gray)" x="440" y="542" font-style="italic">apply, check, adjust</text>
-</g>
-</svg>
-</figure>
-
-- **[[why-many-ai-agents-fail|Why Many AI Agents Fail]]** (2026). I argue that many AI agents fail because teams treat documents as knowledge. Using the DIKW pyramid and Dewey's account of inquiry, the post makes the case that knowledge gets made by applying information to a goal and checking the result, and it ends with practical steps, e.g. recording the reason behind each expert decision and building feedback loops from the start.
-- **[[rethinking-ai-evaluation-through-human-ai-interaction|Rethinking AI Evaluation Through Human-AI Interaction]]** (2026). I map seven ways people relate to AI, from a rival to fusion, and ask what each one leads researchers to measure and what it leads them to miss. One of the open questions is which skills grow and which shrink when someone uses AI in a given way over time.
+Each of the five areas below plays a part in that approach. Forward deployed engineering is where a project starts, with the problem and the people who have it. Synthetic data and context engineering shape what the AI works with, and evaluation checks whether the result resolves the problem. Continuous improvement ties the other four together, because a project gets better only when the team records what it learned from each check and feeds it back in. A full list of my papers is also on [Google Scholar](https://scholar.google.com/citations?user=f3aQo-YAAAAJ&hl=en).
 
 ## Forward deployed engineering
 
@@ -246,3 +183,66 @@ Then I turn those checks into tests that can run again after each change. From t
 </figure>
 
 - **[Eval Agent](https://github.com/ryanlingo/eval-agent)** (2026). Eval Agent is an early prototype that evaluates AI coding agents. It reads the traces of a session in which an engineer worked with an agent, i.e. the record of each request, response, and tool call. It then looks for three kinds of evidence of quality: counts such as which tools were called and how many tokens were used, the model's judgment of whether each answer met the request, and implicit signals, e.g. the engineer correcting the agent, retrying, or abandoning a path. It writes what it finds to a report that the team can use to improve its prompts and agents. So far it has been tested on a synthetic session, and testing on real sessions is the next step.
+
+## Continuous improvement
+
+The term comes from the Japanese idea of kaizen, which means change for the better, where a team makes many small changes, checks each result, and keeps what works. I use it to mean how a team and its AI system get better at a task over time. I think most of that improvement comes from making knowledge, and less of it comes from collecting more documents. Documents, workflows, and model outputs hold information, and knowledge gets made when someone applies that information to a goal, checks the result, and adjusts. John Dewey made a similar argument about inquiry almost a century ago.
+
+The diagram below shows the loop as I see it. First, people choose the goal and define the problem, i.e. the decision the system supports, who it's for, and how a good answer will be judged. Second, the team turns data into information for the task and shapes that information into context, and an agent applies the context to produce an outcome. Third, the team checks the outcome with evaluations and expert review. Fourth, the lessons from the check are recorded with their reasons, so they become knowledge that goes into the context for the next task, and the raw outputs go back in as data.
+
+The reasons are the part that teams most often skip. A lesson recorded as a rule only covers the case it came from, but a lesson recorded with its reason can carry over to a new case that nobody planned for. I also think wisdom, i.e. choosing which goal to serve, stays with people for now, so the loop starts and ends with them.
+
+Learning also happens in the people who use AI. The way a person relates to an AI model, e.g. as a vending machine that hands out answers or as a coach that builds a skill, changes what the person learns from it. Most evaluation measures what the AI produced, so I want to study which skills grow and which shrink when someone uses AI in a given way over time.
+
+<figure class="research-diagram research-diagram-wide">
+<svg viewBox="0 0 910 555" role="img" aria-labelledby="learn-title" xmlns="http://www.w3.org/2000/svg">
+<title id="learn-title">Continuous improvement. People choose the goal, which defines the problem, i.e. the decision, the user, and the test. Data becomes information for a task, and the information and the problem are shaped into context for this task, which raises the question of whether the context is sufficient. An agent applies the context and produces a task outcome, which is checked with evaluations and review. The lessons from the check, with their reasons, become knowledge about what worked and why, and that knowledge goes back into the context. The raw outputs return as data. The loop is apply, check, adjust.</title>
+<defs><marker id="learn-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9" fill="none" stroke="currentColor" stroke-width="1.2"/></marker>
+<marker id="learn-arrow-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9" fill="none" style="stroke: var(--gray)" stroke-width="1.2"/></marker></defs>
+<g fill="none" stroke="currentColor" stroke-width="1.2" marker-end="url(#learn-arrow)">
+<line x1="262" y1="34" x2="372" y2="34"/>
+<line x1="420" y1="80" x2="420" y2="178"/>
+<path d="M420 122 H220 V178"/>
+<line x1="84" y1="199" x2="160" y2="199"/>
+<line x1="280" y1="199" x2="374" y2="199"/>
+<line x1="470" y1="199" x2="568" y2="199"/>
+<line x1="652" y1="199" x2="758" y2="199"/>
+<line x1="790" y1="244" x2="790" y2="288"/>
+<path d="M790 354 V414 H346"/>
+<path d="M320 398 V272 H396 V248"/>
+</g>
+<g fill="none" stroke-width="1">
+<line style="stroke: var(--gray)" x1="420" y1="244" x2="420" y2="288" stroke-dasharray="2 3"/>
+<path style="stroke: var(--gray)" d="M826 354 V478 H50 V250" stroke-dasharray="4 4" marker-end="url(#learn-arrow-gray)"/>
+</g>
+<g fill="currentColor" font-size="18" text-anchor="middle">
+<text x="180" y="40">Wisdom</text>
+<text x="420" y="40">Problem</text>
+<text x="50" y="205">Data</text>
+<text x="220" y="205">Information</text>
+<text x="420" y="205">Context</text>
+<text x="610" y="205">Agent</text>
+<text x="790" y="205">Task</text>
+<text x="790" y="320">Check</text>
+<text x="240" y="420">Knowledge</text>
+</g>
+<g font-size="15" text-anchor="middle">
+<text style="fill: var(--gray)" x="180" y="66">people choose the goal</text>
+<text style="fill: var(--gray)" x="420" y="66">decision, user, test</text>
+<text style="fill: var(--gray)" x="50" y="230">artifacts</text>
+<text style="fill: var(--gray)" x="220" y="230">for a task</text>
+<text style="fill: var(--gray)" x="420" y="230">for this task</text>
+<text style="fill: var(--gray)" x="610" y="230">applies it</text>
+<text style="fill: var(--gray)" x="790" y="230">outcome</text>
+<text style="fill: var(--gray)" x="420" y="312" font-style="italic">sufficient context?</text>
+<text style="fill: var(--gray)" x="790" y="345">evals, review</text>
+<text style="fill: var(--gray)" x="240" y="445">what worked and why</text>
+<text style="fill: var(--gray)" x="570" y="402" font-style="italic">lessons, with reasons</text>
+<text style="fill: var(--gray)" x="440" y="502" font-style="italic">raw outputs return as data</text>
+<text style="fill: var(--gray)" x="440" y="542" font-style="italic">apply, check, adjust</text>
+</g>
+</svg>
+</figure>
+
+- **[[why-many-ai-agents-fail|Why Many AI Agents Fail]]** (2026). I argue that many AI agents fail because teams treat documents as knowledge. Using the DIKW pyramid and Dewey's account of inquiry, the post makes the case that knowledge gets made by applying information to a goal and checking the result, and it ends with practical steps, e.g. recording the reason behind each expert decision and building feedback loops from the start.
+- **[[rethinking-ai-evaluation-through-human-ai-interaction|Rethinking AI Evaluation Through Human-AI Interaction]]** (2026). I map seven ways people relate to AI, from a rival to fusion, and ask what each one leads researchers to measure and what it leads them to miss. One of the open questions is which skills grow and which shrink when someone uses AI in a given way over time.

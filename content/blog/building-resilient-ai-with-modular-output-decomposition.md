@@ -219,5 +219,5 @@ This project represents our ongoing exploration at 99P Labs into making AI a mor
 
 ## See also
 
-- [[research/index|Research]], which lists the later paper on this work, [Componentization: Decomposing Monolithic LLM Responses into Manipulable Semantic Units](https://arxiv.org/abs/2509.08203)
+- [Componentization: Decomposing Monolithic LLM Responses into Manipulable Semantic Units](https://arxiv.org/abs/2509.08203), the later paper on this work
 - [[you-are-not-using-ai-enough|You Are Not Using AI Enough]]
